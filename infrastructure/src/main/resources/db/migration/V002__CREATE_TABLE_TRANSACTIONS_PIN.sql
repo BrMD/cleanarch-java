@@ -1,4 +1,4 @@
-CREATE TABLE TransactionsPin(
+CREATE TABLE TransactionPin(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
     Pin VARCHAR(50) NOT NULL,
     Attempt INT NOT NULL,

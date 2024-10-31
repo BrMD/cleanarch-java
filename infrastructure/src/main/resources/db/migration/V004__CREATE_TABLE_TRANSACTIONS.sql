@@ -1,4 +1,4 @@
-CREATE TABLE Transactions(
+CREATE TABLE Transaction(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
     FromWallet BIGINT NOT NULL,
     ToWallet BIGINT NOT NULL,
@@ -7,6 +7,6 @@ CREATE TABLE Transactions(
     CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UpdateAt DATETIME,
 
-    FOREIGN KEY (FromWallet) REFERENCES Wallets(Id),
-    FOREIGN KEY (ToWallet) REFERENCES Wallets(Id)
+    FOREIGN KEY (FromWallet) REFERENCES Wallet(Id),
+    FOREIGN KEY (ToWallet) REFERENCES Wallet(Id)
 );

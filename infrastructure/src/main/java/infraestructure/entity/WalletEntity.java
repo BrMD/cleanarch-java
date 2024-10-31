@@ -2,7 +2,6 @@ package infraestructure.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,10 +33,9 @@ public class WalletEntity {
     @JoinColumn(name="UserId", nullable=false)
     private UserEntity userId;
 
-    
     @OneToOne
     @JoinColumn(name="TransactionPinId", nullable=false)
-    private TransactionsPinEntity transactionPinId;
+    private TransactionPinEntity transactionPinId;
 
     @Column(name="CreatedAt", nullable=false)
     private LocalDateTime createdAt;

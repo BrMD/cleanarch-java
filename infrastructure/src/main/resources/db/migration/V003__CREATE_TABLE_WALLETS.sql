@@ -7,5 +7,5 @@ CREATE TABLE Wallet(
     UpdateAt DATETIME,
 
     FOREIGN KEY (UserId) REFERENCES Users(Id),
-    FOREIGN KEY (TransactionPinId) REFERENCES TransactionsPin(Id)
+    FOREIGN KEY (TransactionPinId) REFERENCES TransactionPin(Id)
 );

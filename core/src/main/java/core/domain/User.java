@@ -26,6 +26,7 @@ public class User {
         this.updateAt = updateAt;
     }
     public User(String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type) {
+        this.id = UUID.randomUUID();
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
@@ -33,7 +34,9 @@ public class User {
         this.type = type;
         this.createdAt = LocalDateTime.now();
     }
+    
     public User(){}
+
     public UUID getId() {
         return id;
     }

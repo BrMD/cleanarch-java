@@ -15,6 +15,7 @@ import usecase.CreateUserUseCase;
 import usecase.EmailAvailableUseCase;
 import usecase.TaxNumberAvailableUseCase;
 
+
 public class CreateUserUseCaseImpl implements CreateUserUseCase{
     private TaxNumberAvailableUseCase taxNumberAvailableUseCase;
     private EmailAvailableUseCase emailAvailableUseCase;
@@ -31,7 +32,7 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase{
         if(!taxNumberAvailableUseCase.taxNumberAvailable(user.getTaxNumber().getValue())){
             throw new TaxNumberException(ErrorCodeEnum.ON0002.getMessage(), ErrorCodeEnum.ON0002.getCode());
         }
-        if(!emailAvailableUseCase.emailAvailable(user.getEmail())){
+        if (!emailAvailableUseCase.emailAvailable(user.getEmail())) {
             throw new EmailException(ErrorCodeEnum.ON0003.getMessage(), ErrorCodeEnum.ON0003.getCode());
         }
         
