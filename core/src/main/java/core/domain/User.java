@@ -12,29 +12,25 @@ public class User {
     private TaxNumber taxNumber;
     private String fullName;
     private UserTypeEnum type;
-    private TransactionPin transactionPin;
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
     public User(UUID id, String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type,
-            TransactionPin transactionPin, LocalDateTime createdAt, LocalDateTime updateAt) {
+         LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
         this.createdAt = createdAt;
         this.updateAt = updateAt;
     }
-    public User(String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type,
-            TransactionPin transactionPin) {
+    public User(String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type) {
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
         this.createdAt = LocalDateTime.now();
     }
     public User(){}
@@ -74,12 +70,6 @@ public class User {
     public void setType(UserTypeEnum type) {
         this.type = type;
     }
-    public TransactionPin getTransactionPin() {
-        return transactionPin;
-    }
-    public void setTransactionPin(TransactionPin transactionPin) {
-        this.transactionPin = transactionPin;
-    }
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -100,7 +90,6 @@ public class User {
         result = prime * result + ((taxNumber == null) ? 0 : taxNumber.hashCode());
         result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
-        result = prime * result + ((transactionPin == null) ? 0 : transactionPin.hashCode());
         result = prime * result + ((createdAt == null) ? 0 : createdAt.hashCode());
         return result;
     }
@@ -139,11 +128,6 @@ public class User {
         } else if (!fullName.equals(other.fullName))
             return false;
         if (type != other.type)
-            return false;
-        if (transactionPin == null) {
-            if (other.transactionPin != null)
-                return false;
-        } else if (!transactionPin.equals(other.transactionPin))
             return false;
         if (createdAt == null) {
             if (other.createdAt != null)
