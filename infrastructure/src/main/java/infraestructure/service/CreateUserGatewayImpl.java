@@ -38,6 +38,7 @@ public class CreateUserGatewayImpl implements CreateUserGateway{
     public Boolean create(User user, Wallet wallet){
         try {
             log.info("Inicio da criação de usuario::CreateUserGatewayImpl");
+            System.out.println(user.getEmail());
             var userSaved = userEntityRepository.save(userMapper.toEntity(user));
             var transactionPinSaved = transactionPinEntityRepository.save(transactionPinMapper.toEntity(wallet.getTransactionPin()));
             walletEntityRepository.save(walletMapper.toEntity(wallet, userSaved, transactionPinSaved));

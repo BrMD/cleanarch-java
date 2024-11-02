@@ -15,6 +15,7 @@ import usecase.TaxNumberAvailableUseCase;
 
 @Configuration
 public class UserConfig {
+
     @Bean
     public TaxNumberAvailableUseCase taxNumberAvailableUseCase(TaxNumberAvailableGateway taxNumberAvailableGateway){
         return new TaxNumberAvailableUseCaseimpl(taxNumberAvailableGateway);
@@ -26,7 +27,7 @@ public class UserConfig {
     }
 
     @Bean
-    public CreateUserUseCase createUserUseCase(CreateUserGateway createUserGateway, EmailAvailableUseCase emailAvailableUseCase, TaxNumberAvailableUseCase taxNumberAvailableUseCase){
-        return new CreateUserUseCaseImpl(createUserGateway, emailAvailableUseCase, taxNumberAvailableUseCase);
+    public CreateUserUseCase createUserUseCase(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGateway createUserGateway){
+        return new CreateUserUseCaseImpl(taxNumberAvailableUseCase, emailAvailableUseCase, createUserGateway);
     }
 }
