@@ -8,8 +8,6 @@ import core.domain.Wallet;
 import core.exception.InternalServerErrorException;
 import core.exception.NotFoundException;
 import core.exception.NotificationException;
-import core.exception.PinException;
-import core.exception.TransferException;
 import core.exception.enums.ErrorCodeEnum;
 import usecase.CreateTransactionUseCase;
 import usecase.FindWalletByTaxNumberUseCase;
@@ -38,7 +36,7 @@ public class TransferUseCaseImpl implements TransferUseCase{
 
 
     @Override
-    public Boolean transfer(String fromTaxNumber,String toTaxNumber, BigDecimal value,String pin) throws TransferException,InternalServerErrorException, NotFoundException, NotificationException, PinException{
+    public Boolean transfer(String fromTaxNumber,String toTaxNumber, BigDecimal value,String pin) throws Exception,NotFoundException{
         Wallet from = findWalletByTaxNumberUseCase.findByTaxNumber(fromTaxNumber);
         Wallet to = findWalletByTaxNumberUseCase.findByTaxNumber(toTaxNumber);
 

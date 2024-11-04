@@ -9,5 +9,5 @@ import core.exception.PinException;
 import core.exception.TransferException;
 
 public interface TransferUseCase {
-    Boolean transfer(String fromTaxNumber,String toTaxNumber, BigDecimal value, String pin) throws InternalServerErrorException, TransferException, NotFoundException, NotificationException, PinException;
+    Boolean transfer(String fromTaxNumber,String toTaxNumber, BigDecimal value, String pin) throws InternalServerErrorException, TransferException, NotFoundException, NotificationException, PinException, Exception;
 }

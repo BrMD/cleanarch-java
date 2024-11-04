@@ -12,8 +12,10 @@ import infraestructure.repository.TransactionPinEntityRepository;
 import infraestructure.repository.UserEntityRepository;
 import infraestructure.repository.WalletEntityRepository;
 import static infraestructure.utils.Utilities.log;
+import jakarta.transaction.Transactional;
 
 @Service
+@Transactional
 public class CreateUserGatewayImpl implements CreateUserGateway{
     private UserEntityRepository userEntityRepository;
     private UserMapper userMapper;

@@ -4,5 +4,5 @@ import core.domain.Wallet;
 import core.exception.NotFoundException;
 
 public interface FindWalletByTaxNumberUseCase {
-    Wallet findByTaxNumber(String taxNumber) throws NotFoundException;
+    Wallet findByTaxNumber(String taxNumber) throws NotFoundException, Exception;
 }

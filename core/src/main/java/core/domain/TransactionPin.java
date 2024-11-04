@@ -7,17 +7,15 @@ import core.exception.enums.ErrorCodeEnum;
 
 public class TransactionPin {
     private Long id;
-    private Wallet wallet;
     private String pin;
     private Integer attempt;
     private Boolean blocked;
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
     
-    public TransactionPin(Long id,Wallet wallet, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt,
+    public TransactionPin(Long id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt,
             LocalDateTime updateAt) {
         this.id = id;
-        this.wallet = wallet;
         this.pin = pin;
         this.attempt = attempt;
         this.blocked = blocked;
@@ -83,18 +81,12 @@ public class TransactionPin {
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
     }
-    public Wallet getWallet() {
-        return wallet;
-    }
-    public void setWallet(Wallet wallet) {
-        this.wallet = wallet;
-    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((wallet == null) ? 0 : wallet.hashCode());
         result = prime * result + ((pin == null) ? 0 : pin.hashCode());
         result = prime * result + ((attempt == null) ? 0 : attempt.hashCode());
         result = prime * result + ((blocked == null) ? 0 : blocked.hashCode());
@@ -115,11 +107,6 @@ public class TransactionPin {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;
-        if (wallet == null) {
-            if (other.wallet != null)
-                return false;
-        } else if (!wallet.equals(other.wallet))
             return false;
         if (pin == null) {
             if (other.pin != null)

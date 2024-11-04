@@ -14,7 +14,7 @@ public class Wallet {
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
     private TransactionPin transactionPin;
-    public Wallet(TransactionPin transactionPin, Long id, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public Wallet( Long id,TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.transactionPin = transactionPin;
         this.balance = balance;

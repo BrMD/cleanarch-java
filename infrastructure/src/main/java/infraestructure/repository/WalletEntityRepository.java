@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import infraestructure.entity.WalletEntity;
 
 public interface WalletEntityRepository extends JpaRepository<WalletEntity, Long>{
-
+    WalletEntity findByUserIdTaxNumber(String taxNumber);
 }
