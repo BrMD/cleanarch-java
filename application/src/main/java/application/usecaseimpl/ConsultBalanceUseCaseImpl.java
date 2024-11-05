@@ -2,18 +2,18 @@ package application.usecaseimpl;
 
 import java.math.BigDecimal;
 
-import application.gateway.ConsultBalanceGateway;
-import core.domain.Wallet;
+import core.exception.NotFoundException;
 import usecase.ConsultBalanceUseCase;
+import usecase.FindWalletByTaxNumberUseCase;
 
 public class ConsultBalanceUseCaseImpl implements ConsultBalanceUseCase{
-    private ConsultBalanceGateway consultBalanceGateway;
+    private FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
 
-    public ConsultBalanceUseCaseImpl(ConsultBalanceGateway consultBalanceGateway) {
-        this.consultBalanceGateway = consultBalanceGateway;
+    public ConsultBalanceUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase) {
+        this.findWalletByTaxNumberUseCase = findWalletByTaxNumberUseCase;
     }
     @Override
-    public BigDecimal consult(Wallet wallet){
-        return consultBalanceGateway.consult(wallet);
+    public BigDecimal consult(String taxNumber) throws NotFoundException, Exception{
+        return findWalletByTaxNumberUseCase.findByTaxNumber(taxNumber).getBalance();
     }
 }

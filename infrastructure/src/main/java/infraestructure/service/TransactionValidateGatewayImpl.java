@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import application.gateway.TransactionValidateGateway;
 import core.domain.Transaction;
-import infraestructure.client.ApiValidateService;
+import infraestructure.client.apiValidate.ApiValidateService;
 
 @Service
 public class TransactionValidateGatewayImpl implements TransactionValidateGateway{

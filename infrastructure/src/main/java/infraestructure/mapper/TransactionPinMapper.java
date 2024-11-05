@@ -9,6 +9,16 @@ import infraestructure.entity.TransactionPinEntity;
 public class TransactionPinMapper {
     public TransactionPinEntity toEntity(TransactionPin transactionPin){
         return new TransactionPinEntity(
+            transactionPin.getPin(),
+            transactionPin.getAttempt(),
+            transactionPin.getBlocked(),
+            transactionPin.getCreatedAt(),
+            transactionPin.getUpdateAt()
+        );
+    }
+
+    public TransactionPinEntity toEntityUpdate(TransactionPin transactionPin){
+        return new TransactionPinEntity(
             transactionPin.getId(),
             transactionPin.getPin(),
             transactionPin.getAttempt(),
