@@ -1,8 +1,10 @@
-package infraestructure.client;
+package infraestructure.client.apiValidate;
 
 import org.springframework.stereotype.Service;
 
-import infraestructure.client.dto.response.ApiValidateResponse;
+import infraestructure.client.apiValidate.response.ApiValidateResponse;
+
+
 
 @Service
 public class ApiValidateService {

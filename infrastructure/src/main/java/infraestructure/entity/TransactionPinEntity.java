@@ -8,12 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Table(name = "TransactionPin")
@@ -40,6 +38,16 @@ public class TransactionPinEntity {
     private LocalDateTime updatedAt;
 
     public TransactionPinEntity(String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.pin = pin;
+        this.attempt = attempt;
+        this.blocked = blocked;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public TransactionPinEntity(Long id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
+        this.id = id;
         this.pin = pin;
         this.attempt = attempt;
         this.blocked = blocked;

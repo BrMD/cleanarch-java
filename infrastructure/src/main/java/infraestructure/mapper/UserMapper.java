@@ -20,6 +20,7 @@ public class UserMapper {
             user.getUpdateAt());
     }
 
+    
     public User toUser(CreateUserRequest request) throws Exception{
         return new User(    
             request.email(),request.password(),new TaxNumber(request.taxNumber()),request.fullname(),request.type()

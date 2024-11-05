@@ -64,7 +64,7 @@ public class Wallet {
         this.updateAt = updateAt;
     }
     public void receiveValue(BigDecimal value){
-        this.balance.add(value);
+        this.balance = this.balance.add(value);
     }
     public void transfer(BigDecimal value) throws TransferException{
         if(this.user.getType() == UserTypeEnum.SHOPKEEPER){
@@ -75,7 +75,7 @@ public class Wallet {
             throw new TransferException(ErrorCodeEnum.TR0002.getMessage(),ErrorCodeEnum.TR0002.getCode()); 
         }
 
-        this.balance.subtract(value);
+        this.balance = this.balance.subtract(value);
     }
     @Override
     public int hashCode() {

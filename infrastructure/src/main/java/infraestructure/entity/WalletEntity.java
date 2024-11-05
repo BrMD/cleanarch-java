@@ -43,4 +43,23 @@ public class WalletEntity {
     @Column(name="UpdateAt")
     private LocalDateTime updateAt;
 
+    public WalletEntity(BigDecimal balance,  TransactionPinEntity transactionPinId, UserEntity userId,LocalDateTime createdAt,LocalDateTime updateAt) {
+        this.balance = balance;
+        this.createdAt = createdAt;
+        this.transactionPinId = transactionPinId;
+        this.updateAt = updateAt;
+        this.userId = userId;
+    }
+
+    public WalletEntity(Long id, BigDecimal balance , TransactionPinEntity transactionPinId, UserEntity userId, LocalDateTime createdAt,LocalDateTime updateAt) {
+        this.balance = balance;
+        this.createdAt = createdAt;
+        this.id = id;
+        this.transactionPinId = transactionPinId;
+        this.updateAt = updateAt;
+        this.userId = userId;
+    }
+
+
+
 }
